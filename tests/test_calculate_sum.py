@@ -8,7 +8,7 @@ def test_sum(app):
     num_1 = test_data.test_num
     num_2 = test_data.test_num
     main_obj.sum_numbers(num_1, num_2)
-    res = main_obj.get_result_text()
-    expected_rus = str(num_1+num_2)
-    assert res == expected_rus
+    result = main_obj.get_result_text()
+    expected_rusult = str(num_1+num_2)
+    assert result == expected_rusult
    
