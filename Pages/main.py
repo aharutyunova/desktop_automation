@@ -7,14 +7,13 @@ class Main(Helper):
     btn_equal = "equalButton"
     result = "CalculatorResults"
 
-    
     def click_number(self, number):
         btn_id = f"num{number}Button"
         self.window_app.child_window(auto_id=btn_id).click()
-    
+
     def click_no_number_btn(self, btn_name):
         self.window_app.child_window(auto_id=btn_name).click()
-    
+
     def get_result_text(self):
         res = self.window_app.child_window(auto_id=self.result).window_text()
         res_text = str(res).split()[2]
@@ -25,4 +24,3 @@ class Main(Helper):
         self.click_no_number_btn(self.btn_plus)
         self.click_number(num2)
         self.click_no_number_btn(self.btn_equal)
-        

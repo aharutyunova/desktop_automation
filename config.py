@@ -1,2 +1,2 @@
-app_name = "Калькулятор"
+app_name = "Calculator"
 exe_name = "calc.exe"
