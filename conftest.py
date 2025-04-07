@@ -1,7 +1,7 @@
 from pywinauto import Application
 import pytest
 import config
-
+import logging
 
 @pytest.fixture()
 def app():
@@ -13,3 +13,13 @@ def app():
         application.kill()
     except Exception as error:
         raise Exception(error)
+
+@pytest.fixture(autouse=True)
+def log_configuration():
+    logging.basicConfig(
+        filename="logs.log",
+        level=logging.INFO,
+        format="%(asctime)s - %(levelname)s - %(message)s",
+        filemode="a",
+        force=True  # This is key - it forces the new configuration
+    )
